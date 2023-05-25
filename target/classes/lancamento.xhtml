@@ -1,83 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-        xmlns:h="http://xmlns.jcp.org/jsf/html"
-        xmlns:p="http://primefaces.org/ui"
-        xml:lang="en"
-        xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <script type="text/javascript">
-        //<![CDATA[
-        function start() {
-            PF('statusDialog').show();
-        }
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+        
+    <ui:define name="corpo">
 
-        function stop() {
-            PF('statusDialog').hide();
-        }
-
-        //]]>
-    </script>
-    <title>Lançamento</title>
-</h:head>
-
-	<f:view>
-
-		<div class="card">
-		    <h:form>
-		        <p:megaMenu orientation="horizontal" autoDisplay="false">
-		            <p:submenu label="Lançamentos" icon="pi pi-fw pi-video">
-		                <p:column>
-		                    <p:submenu label="Lançamentos de Caixa">
-		                    	<p:menuitem value="Página inicial" url="/index.jr"/>
-		                        <p:menuitem value="Realizar Lançamento" url="/lancamento.jr"/>
-		                        <p:menuitem value="Lançamentos Realizados" url="/caixa.jr"/>
-		                    </p:submenu>
-		                </p:column>
-		            </p:submenu>
-		        </p:megaMenu>        
-		    </h:form>
-		</div>
-		
-		<p:panel header="Lançamento">
-		
-			<h:form id="lctos">
-				<h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
-			        <div class="field col-12 md:col-4">
-		                <p:outputLabel for="@next" value="Tipo"/>
-		                <p:selectOneMenu id="option" value="#{lancamentoMB.lancamentoCaixa.tipo}">
-		                	<f:selectItem itemLabel="Selecionar.." itemValue=""/>
-		                    <f:selectItem itemLabel="Débito" itemValue="debito"/>
-		                    <f:selectItem itemLabel="Crédito" itemValue="credito"/>
-		                </p:selectOneMenu>
-		            </div>
-			 
-			        <p:outputLabel for="produto" value="Produto" />
-			        <p:inputText id="produto" value="#{lancamentoMB.lancamentoCaixa.produto}">
-			        </p:inputText>
-			        <p:message for="produto" />
-			 
-			        <p:outputLabel for="valor" value="Valor"/>
-			        <p:inputNumber id="valor" value="#{lancamentoMB.lancamentoCaixa.valor}" symbol="R$">
-			        </p:inputNumber>
-			        <p:message for="valor" />
-			 
-			        <p:outputLabel for="dataLcto" value="Data do lançamento" />
-			        <p:calendar id="dataLcto" value="#{lancamentoMB.lancamentoCaixa.data}" 
-			        	pattern="dd.MM.yyyy" mask="true">
-			            <f:convertDateTime type="localDate" pattern="dd.MM.yyyy" />
-			        </p:calendar>
-			        <p:message for="dataLcto" />
-			 
-			        <p:commandButton value="Lançar" reRender="lctos" action="#{lancamentoMB.incluir}" update="@form">
-			        </p:commandButton>
-			    </h:panelGrid>
-				
-			</h:form>
-		
-		</p:panel>
-		
-	</f:view>
-
-</html>
+		<f:view>			
+			<p:panel header="Lançamento">
+			
+				<h:form id="lctos">
+					<h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
+				        <div class="field col-12 md:col-4">
+			                <p:outputLabel for="@next" value="Tipo"/>
+			                <p:selectOneMenu id="option" value="#{lancamentoMB.lancamentoCaixa.tipo}">
+			                	<f:selectItem itemLabel="Selecionar.." itemValue=""/>
+			                    <f:selectItem itemLabel="Débito" itemValue="debito"/>
+			                    <f:selectItem itemLabel="Crédito" itemValue="credito"/>
+			                </p:selectOneMenu>
+			            </div>
+				 
+				        <p:outputLabel for="produto" value="Produto" />
+				        <p:inputText id="produto" value="#{lancamentoMB.lancamentoCaixa.produto}">
+				        </p:inputText>
+				        <p:message for="produto" />
+				 
+				        <p:outputLabel for="valor" value="Valor"/>
+				        <p:inputNumber id="valor" value="#{lancamentoMB.lancamentoCaixa.valor}" symbol="R$">
+				        </p:inputNumber>
+				        <p:message for="valor" />
+				 
+				        <p:outputLabel for="dataLcto" value="Data do lançamento" />
+				        <p:calendar id="dataLcto" value="#{lancamentoMB.lancamentoCaixa.data}" 
+				        	pattern="dd.MM.yyyy" mask="true">
+				            <f:convertDateTime type="localDate" pattern="dd.MM.yyyy" />
+				        </p:calendar>
+				        <p:message for="dataLcto" />
+				 
+				        <p:commandButton value="Lançar" reRender="lctos" action="#{lancamentoMB.incluir}" update="@form">
+				        </p:commandButton>
+				    </h:panelGrid>
+					
+				</h:form>
+			
+			</p:panel>
+			
+		</f:view>
+	</ui:define>
+</ui:composition>
