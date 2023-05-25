@@ -17,6 +17,6 @@
   
   Em seguida, executar a classe "DesafioFluxocaixaApplication.java".
   
-  Para visualizar a página inicial, acessar o link http://localhost:8080/caixa.jr localmente onde a aplicação foi importada.
+  Para visualizar a página inicial, acessar o link http://localhost:8080/index.jr localmente onde a aplicação foi importada.
   
   Na raiz do projeto, há uma pasta chamada "postman" a qual contém a collection referente à api criada.
