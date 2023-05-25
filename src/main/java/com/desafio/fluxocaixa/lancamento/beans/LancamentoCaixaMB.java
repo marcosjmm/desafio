@@ -18,7 +18,7 @@ public class LancamentoCaixaMB {
 	
 	private List<LancamentoCaixa> lancamentos = new ArrayList<>();
 	
-	private LancamentoCaixa lancamentoCaixa;
+	private LancamentoCaixa lancamentoCaixa = new LancamentoCaixa();
 	
 	@Autowired
 	private LancamentoCaixaRepository lancamentoCaixaRepo;
@@ -31,6 +31,11 @@ public class LancamentoCaixaMB {
 	
 	public List<LancamentoCaixa> getLancamentos() {
 		return lancamentos;
+	}
+	
+	public void incluir() {
+		lancamentoCaixaRepo.save(lancamentoCaixa);
+		this.lancamentoCaixa = new LancamentoCaixa();
 	}
 	
 	public void setLancamentos(List<LancamentoCaixa> lancamentos) {

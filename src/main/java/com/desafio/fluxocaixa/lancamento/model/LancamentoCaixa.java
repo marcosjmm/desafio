@@ -1,6 +1,6 @@
 package com.desafio.fluxocaixa.lancamento.model;
 
-import java.time.Instant;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,18 +9,6 @@ import javax.persistence.Id;
 
 @Entity
 public class LancamentoCaixa {
-
-	public LancamentoCaixa(Long idLancamento, String tipo, String produto, Double valor, Instant data) {
-		this.idLancamento = idLancamento;
-		this.tipo = tipo;
-		this.produto = produto;
-		this.valor = valor;
-		this.data = data;
-	}
-	
-	public LancamentoCaixa() {
-		
-	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +20,19 @@ public class LancamentoCaixa {
 	
 	private Double valor;
 	
-	private Instant data;
+	private Date data;
+	
+	public LancamentoCaixa(Long idLancamento, String tipo, String produto, Double valor, Date data) {
+		this.idLancamento = idLancamento;
+		this.tipo = tipo;
+		this.produto = produto;
+		this.valor = valor;
+		this.data = data;
+	}
+	
+	public LancamentoCaixa() {
+		
+	}
 
 	public Long getIdLancamento() {
 		return idLancamento;
@@ -66,11 +66,11 @@ public class LancamentoCaixa {
 		this.valor = valor;
 	}
 
-	public Instant getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(Instant data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	
