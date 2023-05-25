@@ -44,18 +44,23 @@
 		
 			<h:form id="lctos">
 				<h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
-			        <p:outputLabel for="tipo" value="Tipo" />
-			        <p:inputText id="tipo" value="#{lancamentoMB.lancamentoCaixa.tipo}" />
-			        <p:message for="tipo" />
+			        <div class="field col-12 md:col-4">
+		                <p:outputLabel for="@next" value="Tipo"/>
+		                <p:selectOneMenu id="option" value="#{lancamentoMB.lancamentoCaixa.tipo}">
+		                	<f:selectItem itemLabel="Selecionar.." itemValue=""/>
+		                    <f:selectItem itemLabel="Débito" itemValue="debito"/>
+		                    <f:selectItem itemLabel="Crédito" itemValue="credito"/>
+		                </p:selectOneMenu>
+		            </div>
 			 
 			        <p:outputLabel for="produto" value="Produto" />
 			        <p:inputText id="produto" value="#{lancamentoMB.lancamentoCaixa.produto}">
 			        </p:inputText>
 			        <p:message for="produto" />
 			 
-			        <p:outputLabel for="valor" value="Valor" />
-			        <p:inputText id="valor" value="#{lancamentoMB.lancamentoCaixa.valor}">
-			        </p:inputText>
+			        <p:outputLabel for="valor" value="Valor"/>
+			        <p:inputNumber id="valor" value="#{lancamentoMB.lancamentoCaixa.valor}" symbol="R$">
+			        </p:inputNumber>
 			        <p:message for="valor" />
 			 
 			        <p:outputLabel for="dataLcto" value="Data do lançamento" />
@@ -65,7 +70,7 @@
 			        </p:calendar>
 			        <p:message for="dataLcto" />
 			 
-			        <p:commandButton value="Lançar" action="#{lancamentoMB.incluir}">
+			        <p:commandButton value="Lançar" reRender="lctos" action="#{lancamentoMB.incluir}" update="@form">
 			        </p:commandButton>
 			    </h:panelGrid>
 				

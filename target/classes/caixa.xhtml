@@ -21,7 +21,7 @@
     </script>
     <title>Fluxo de caixa</title>
 </h:head>
-<f:view>
+<f:view> 
 
 	<h:form>
         <p:megaMenu orientation="horizontal" autoDisplay="false">
@@ -44,6 +44,9 @@
 	    <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
 	    <h:body>
 	        <h:form id="formLancamentos" prependId="false">
+	        	<f:metadata>  
+					<f:event type="preRenderView" update="@form" listener="#"/>  
+				</f:metadata>
 	            <h:commandLink action="#{lancamentoMB.listarTodos}" value="Recarregar a listagem!" >
 	                <p:graphicImage name="/images/refresh.png" alt="Recarregar listagem!" width="24"/>
 	            </h:commandLink>

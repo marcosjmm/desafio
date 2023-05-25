@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "863fde6c-2b66-491a-b735-2dde1119480f",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7978674"
+	},
+	"item": [
+		{
+			"name": "Alterar lancamentos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idLancamento\": 2,\r\n    \"tipo\": \"credito\",\r\n    \"produto\": \"bala\",\r\n    \"valor\": 5.33,\r\n    \"data\": \"2023-05-24T03:55:44.395873600Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/caixa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"caixa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Lancamento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"credito\",\r\n    \"produto\": \"bala\",\r\n    \"valor\": 5.33,\r\n    \"data\": \"2023-05-24T03:55:44.395873600Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/caixa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"caixa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retornar lancamentos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"credito\",\r\n    \"produto\": \"bala\",\r\n    \"valor\": 5.33,\r\n    \"data\": \"2023-05-24T03:55:44.395873600Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/caixa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"caixa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retornar lancamento específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"credito\",\r\n    \"produto\": \"bala\",\r\n    \"valor\": 5.33,\r\n    \"data\": \"2023-05-24T03:55:44.395873600Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/caixa/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"caixa",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar lancamentos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"credito\",\r\n    \"produto\": \"bala\",\r\n    \"valor\": 5.33,\r\n    \"data\": \"2023-05-24T03:55:44.395873600Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/caixa/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"caixa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
