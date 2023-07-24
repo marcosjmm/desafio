@@ -1,6 +1,6 @@
 # Desafio
 
-  Sistema de controle de fluxo de caixa simples. Nele, foir criado uma API Rest em Java que permite fazer o CRUD de lançamentos de caixa    utilizando Spring Boot. Além disso, temos também uma tela de consulta de lançamentos onde podemos exportar os dados em Excel, PDF, CSV
+  Sistema de controle de fluxo de caixa simples. Nele, foi criado uma API Rest em Java que permite fazer o CRUD de lançamentos de caixa    utilizando Spring Boot. Além disso, temos também uma tela de consulta de lançamentos onde podemos exportar os dados em Excel, PDF, CSV
   e XML. Há também, uma tela para a realização dos lançamentos. Para este desafio, é utilizado o banco de dados H2, armazenando as informações apenas em memória. Cada vez que a aplicação é reiniciada, o banco de dados é zerado.
   
 ## Funcionamento
